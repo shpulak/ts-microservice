@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+app.get('/',(request, response)=>{
+    response.send('This is Timestamp microservice which converts natural date to unix timestamp and vice-versa. Append natural date or unix timestamp to the url to get the conversion.');
+})
 app.get("/:str", (request, response) => {
     let dateStr = request.params.str;
     let regex = /\D/ig;
